@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💳 Secure Payment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightblue;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 420px;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #03396c;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+            color: #03396c;
+        }
+
+        /* Updated Button Styling */
+        .pay-btn {
+            width: 100%;
+            background-color: #03396c;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .pay-btn:hover {
+            background-color: #011f4b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>💳 Secure Payment</h2>
+
+        <label>📧 Email</label>
+        <input type="email" placeholder="Enter your email">
+        
+        <label>💲 Payment Method</label>
+        <div class="radio-group">
+            <label>💵Cash on Delivery (COD) <input type="radio" name="payment" checked> </label>
+            <label>💳 Online Payment <input type="radio" name="payment"> </label>
+        </div>
+        
+        <label>💳 Card Information</label>
+        <input type="text" placeholder="1234 1234 1234 1234">
+        <input type="text" placeholder="MM / YY">
+        <input type="text" placeholder="CVC">
+        
+        <label>📝 Name on Card</label>
+        <input type="text" placeholder="Cardholder Name">
+        
+        <label>🏠 Billing Address</label>
+        <select>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+        </select>
+        <input type="text" placeholder="Address Line 1">
+        <input type="text" placeholder="Address Line 2">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="PIN">
+        <select>
+            <option>State</option>
+            <option>Andhra Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Telangana</option>
+            <option>Delhi</option>
+        </select>
+        
+        <button class="pay-btn">Confirm Order</button>
+    </div>
+</body>
+</html>

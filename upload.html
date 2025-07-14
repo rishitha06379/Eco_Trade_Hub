@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Waste Image</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #03396c;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #03396c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #011f4b;
+            transform: scale(1.05);
+        }
+        .back-button {
+            background-color: #03396c;
+            margin-top: 15px;
+        }
+        .back-button:hover {
+            background-color: #03396c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Upload Waste Image</h2>
+        <p>📷 Upload a waste image to verify and earn 10 eco-points.</p>
+        
+        <input type="file" id="wasteImage" accept="image/*">
+        
+        <button onclick="submitWasteImage()">✅ Submit Image</button>
+        
+        <br>
+        <button class="back-button" onclick="goBack()">⬅ Back to Map</button>
+    </div>
+
+    <script>
+        function submitWasteImage() {
+            let fileInput = document.getElementById("wasteImage");
+
+            if (fileInput.files.length === 0) {
+                alert("⚠ Please upload an image to proceed.");
+                return;
+            }
+
+            // Simulate verification process
+            setTimeout(() => {
+                alert("✅ Waste image verified! You earned 10 eco-points.");
+                
+                let points = localStorage.getItem("ecoPoints") ? parseInt(localStorage.getItem("ecoPoints")) : 0;
+                points += 10; // Adds only 10 points
+                localStorage.setItem("ecoPoints", points);
+
+                window.location.href = "map.html"; // Redirect back to map page
+            }, 2000);
+        }
+
+        function goBack() {
+            window.location.href = "map.html"; // Redirects back to map page
+        }
+    </script>
+
+</body>
+</html>

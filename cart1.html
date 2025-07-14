@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Scrap Exchange</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        header {
+            background: #28a745;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        main {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #28a745;
+            color: white;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity (kg)</th>
+                    <th>Price per kg</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Items will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <h2>Total Amount: <span id="total-amount">₹0</span></h2>
+            <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Dummy cart data (Replace with actual data from localStorage or API)
+            let cartItems = [
+                { name: "Aluminum Cans", quantity: 5, price: 50 },
+                { name: "Old Newspapers", quantity: 3, price: 10 }
+            ];
+
+            let cartTable = document.getElementById("cart-items");
+            let totalAmount = 0;
+
+            cartItems.forEach((item, index) => {
+                let row = document.createElement("tr");
+                let totalPrice = item.quantity * item.price;
+                totalAmount += totalPrice;
+
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.quantity}</td>
+                    <td>₹${item.price}</td>
+                    <td>₹${totalPrice}</td>
+                    <td><button onclick="removeItem(${index})">Remove</button></td>
+                `;
+
+                cartTable.appendChild(row);
+            });
+
+            document.getElementById("total-amount").innerText = `₹${totalAmount}`;
+        });
+
+        function proceedToCheckout() {
+            alert("Proceeding to checkout!");
+            // Redirect to checkout page if needed
+        }
+
+        function removeItem(index) {
+            alert("Item removed! (Implement actual removal logic)");
+        }
+    </script>
+</body>
+</html>

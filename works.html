@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works? - EcoTradeHub</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link href="css/how.css" rel="stylesheet">
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #d0eaff; /* Light Blue */
+            color: #03396c; /* Dark Blue */
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+        h4 {
+            color:#03396c;
+        }
+
+        h1, h4, p, .lead {
+            opacity: 0;
+            transform: translateY(15px);
+            animation: fadeInBounce 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Info Box Styling */
+        .info-box {
+            background: #ffffff; /* White */
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-box i {
+            font-size: 40px;
+            color: #03396c; /* Dark Blue */
+            margin-bottom: 15px;
+        }
+
+        .info-box h4 {
+            color: #011f4b; /* Deep Navy */
+        }
+
+        .info-box p {
+            color: #022b5d; /* Slightly Lighter Navy */
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #03396c !important; /* Dark Blue */
+        }
+
+        .navbar-dark .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #011f4b !important; /* Darker Blue */
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: #03396c; /* Dark Blue */
+            color: #ffffff;
+        }
+
+        /* Buttons */
+        .btn-custom {
+            background: #03396c; /* Dark Blue */
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        .btn-custom:hover {
+            background: #011f4b; /* Darker Blue */
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+        <a class="navbar-brand" href="#">ECO TRADE HUB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="works.html">How It Works?</a>
+                        <a class="dropdown-item" href="about.html">About Us</a>
+                        <a class="dropdown-item" href="faqs.html">FAQs</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="container">
+        <h1>How Does <span style="color:#03396c;">EcoTradeHub</span> Work?</h1>
+        <p class="lead">"Empowering a greener future by transforming waste into opportunity."</p>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="info-box">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Sell Waste</h4>
+                    <p>Earn money by selling your waste to recyclers and factories.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h4>Buy Waste</h4>
+                    <p>Factories and recyclers can purchase valuable waste materials.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h4>Exchange Waste</h4>
+                    <p>Swap waste for eco-friendly products, e.g., chip packets → bags.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="info-box">
+                    <i class="fas fa-brain"></i>
+                    <h4>AI Assessment</h4>
+                    <p>AI analyzes the waste and provides a recyclability score.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box">
+                    <i class="fas fa-recycle"></i>
+                    <h4>NGO Collection</h4>
+                    <p>Report waste sites for NGO cleanup and environmental safety.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-box">
+                    <i class="fas fa-gift"></i>
+                    <h4>Redeem Rewards</h4>
+                    <p>Earn coins and exchange them for eco-friendly products.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Built by <strong>Team EcoTradeHub</strong></p>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Your Location & Earn Points</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 15px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .points-container {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        footer {
+            background: #f1f1f1;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>📌 Pin Your Location & Earn 10 Points!</header>
+    
+    <button onclick="getUserLocation()">📍 Pin Your Live Location</button>
+
+    <div id="map"></div>
+    
+    <div class="points-container">
+        <p>🎉 Points Earned: <span id="points">0</span> eco-points</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 EcoPin | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map = L.map('map').setView([20.5937, 78.9629], 5); // Default location: India
+        let marker;
+        
+        // Reset points to 0 on page load and store in localStorage
+        localStorage.setItem("ecoPoints", 0);
+        let points = parseInt(localStorage.getItem("ecoPoints"));
+        document.getElementById("points").innerText = points;
+
+        // Load OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        function getUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const userLocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    // Remove previous marker if exists
+                    if (marker) {
+                        map.removeLayer(marker);
+                    }
+
+                    // Place marker
+                    marker = L.marker([userLocation.lat, userLocation.lng]).addTo(map)
+                        .bindPopup("📍 You are here!")
+                        .openPopup();
+
+                    map.setView([userLocation.lat, userLocation.lng], 14);
+
+                    // Increase points each time location is pinned & save to localStorage
+                    points += 10;
+                    localStorage.setItem("ecoPoints", points);
+                    document.getElementById("points").innerText = points;
+                    
+                    alert("✅ Location pinned! You've earned 10 eco-points.");
+                    
+                }, () => {
+                    alert("⚠ Location access denied. Please enable GPS.");
+                });
+            } else {
+                alert("❌ Geolocation is not supported by your browser.");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Redeem Your Eco-Points</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #b3cde0 !important;
+        }
+        .navbar {
+            background: #003366 !important;
+        }
+        header {
+            background: #003366;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+        .gift-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gift-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            background: white;
+            width: 250px;
+            text-align: center;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gift-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .redeem-button {
+            background-color: #003366;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: auto;
+        }
+        .redeem-button:hover {
+            background-color: #032f58;
+            transform: scale(1.05);
+        }
+        .gift-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .cart {
+            background: white;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            width: 50%;
+        }
+        footer {
+            background: #f1f1f1;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
+        <a class="navbar-brand" href="#">ECO TRADE HUB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Learn More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="works.html">How It Works?</a>
+                        <a class="dropdown-item" href="about.html">About Us</a>
+                        <a class="dropdown-item" href="faqs.html">FAQs</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <header>🎁 Redeem Your Eco-Points</header>
+
+    <p>Total Available Points: <span id="totalPoints">0</span></p>
+
+    <div class="gift-container">
+        <div class="gift-card">
+            <img src="imgs/ef1.jpg" alt="Eco-Friendly Pens">
+            <h4>Eco-Friendly Pens (Pack of 5)</h4>
+            <p>Cost: 30 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(30, 'Eco-Friendly Pens')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef2.jpg" alt="Eco-Friendly Notebook">
+            <h4>Eco-Friendly Notebook</h4>
+            <p>Cost: 40 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(40, 'Eco-Friendly Notebook')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef3.jpg" alt="Saplings">
+            <h4>Saplings</h4>
+            <p>Cost: 50 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(50, 'Saplings')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef4.jpg" alt="Tote Bags">
+            <h4>Tote Bags</h4>
+            <p>Cost: 50 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(50, 'Tote Bags')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef7.jpg" alt="Paper Weight Holders">
+            <h4>Paper Weight Holders</h4>
+            <p>Cost: 40 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(40, 'Paper Weight Holders')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef9.jpg" alt="Coffee Coasters">
+            <h4>Coffee Coasters</h4>
+            <p>Cost: 40 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(40, 'Coffee Coasters')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef8.jpg" alt="Bamboo Brushes">
+            <h4>Bamboo Brushes</h4>
+            <p>Cost: 30 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(30, 'Bamboo Brushes')">Redeem</button>
+        </div>
+        <div class="gift-card">
+            <img src="imgs/ef10.jpg" alt="Eco-Friendly Hamper">
+            <h4>Eco-Friendly Hamper</h4>
+            <p>Cost: 100 Points</p>
+            <button class="redeem-button" onclick="redeemPoints(100, 'Eco-Friendly Hamper')">Redeem</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h3>🛒 Redeemed Products</h3>
+        <ul id="redeemedItems">
+            <li>No items in your cart</li>
+        </ul>
+        <button class="redeem-button" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 EcoPin | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script>
+        let points = localStorage.getItem("ecoPoints") ? parseInt(localStorage.getItem("ecoPoints")) : 100;
+        document.getElementById("totalPoints").innerText = points;
+
+        function redeemPoints(cost, itemName) {
+            if (points >= cost) {
+                points -= cost;
+                localStorage.setItem("ecoPoints", points);
+                document.getElementById("totalPoints").innerText = points;
+                let cartList = document.getElementById("redeemedItems");
+
+                if (cartList.innerHTML.includes("No items in your cart")) {
+                    cartList.innerHTML = "";
+                }
+
+                let listItem = document.createElement("li");
+                listItem.textContent = `${itemName} (Cost: ${cost} Points)`;
+                cartList.appendChild(listItem);
+            } else {
+                alert("❌ Not enough points!");
+            }
+        }
+
+        function placeOrder() {
+            document.getElementById("redeemedItems").innerHTML = "<li>No items in your cart</li>";
+            alert("📦 Order placed successfully!");
+        }
+    </script>
+</body>
+</html>
